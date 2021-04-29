@@ -1,7 +1,37 @@
 <?php
 
   $cols = 7;
-  $rows = 9;
+  $rows = 6;
+  $color = "lightblue";
+
+  function drawTable($cols, $rows, $color) {
+    echo "<table width='400' border='2' style='margin-left: 1.2em; margin-top: 30px;'>";
+
+      for ($i = 1; $i <= $rows; $i++ ) {
+        
+        echo '<tr>';
+        
+        for ($j = 1; $j <= $cols; $j++) {
+
+          if ($i == 1 || $j == 1) {
+            $style = "font-weight: bold; text-align: center; background: $color";
+            echo "<td style='$style'>";
+          }
+          else {
+            echo '<td>';
+          }
+
+          echo $i * $j;
+          echo '</td>';
+        }
+
+        echo '</tr>';
+
+      }
+
+      echo '</table>';
+  }
+
 
 ?>
 
@@ -46,31 +76,7 @@
     </form>
     <!-- Таблица -->
     <?php
-
-      echo "<table width='400' border='2' style='margin-left: 1.2em; margin-top: 30px;'>";
-
-      for ($i = 1; $i <= $rows; $i++ ) {
-        
-        echo '<tr>';
-        
-        for ($j = 1; $j <= $cols; $j++) {
-
-          if ($i == 1 || $j == 1) {
-            echo '<td style="font-weight: bold; text-align: center; background: lightgray; ">';
-          }
-          else {
-            echo '<td>';
-          }
-
-          echo $i * $j;
-          echo '</td>';
-        }
-
-        echo '</tr>';
-
-      }
-
-      echo '</table>'
+        drawTable($cols, $rows, $color);
     ?>
     <!-- Таблица -->
     <!-- Область основного контента -->
