@@ -32,7 +32,7 @@
           }
   
           if (isset($result)) {
-            echo $result;
+            echo "Результат: $num1 $operator $num2 = $result";
           }  
 
         } 
